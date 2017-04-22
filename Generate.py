@@ -93,7 +93,7 @@ def outputWorld(World,filePath):
     print("\nwriting to : " , filePath)
     f = open(filePath,'w')
     for x in range(len(World)):
-        f.write(str(World[x]))
+        f.write(str(World[x]) + " ")
 
     f.close()    
     return 0
@@ -110,7 +110,7 @@ def checkRandomness(World):
 
 def graph(World):
     print(" \n=" , len(World))
-    for y in range(max(World)):
+    for y in reversed(range(max(World))):
         for x in range(len(World)):
             if(World[x]>y):
                 print("X",end="")
@@ -125,7 +125,7 @@ start = timeit.default_timer()
 x_size = 150
 world = []
 
-generateWorld(x_size,world,20,20)
+generateWorld(x_size,world,10,5)
 debug(world,True)
 outputWorld(world,"C:\\tools\\test.txt")
 
