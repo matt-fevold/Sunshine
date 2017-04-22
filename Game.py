@@ -7,11 +7,10 @@ def readInWorld(filepath):
     World = []
     
     with open(filepath,"r") as file:
-        for x in file:
-            tempWorld.append(x)
+        for x in file.readline():
+            tempWorld.append(file)
 
-    for x in range(len(tempWorld)):
-        World = tempWorld.split()
+    #print (tempWorld[0])
             
     return World
         
@@ -30,5 +29,5 @@ def graph(World):
 
 
 world = readInWorld("C:\\tools\\test.txt")
-print(world[0])
-#graph(world)
+#print(world[0])
+graph(world)
